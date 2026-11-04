@@ -1,166 +1,244 @@
-<!DOCTYPE html> 
+<!--```html-->
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" /> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>SmPL</title>
-    <style>
-        .header {
-            background-color: rgb(255, 255, 255);
-            padding: 15px;
-            text-align: center;
-            height: 150px;
-        }
 
-        .nav_menu {
-            overflow: hidden;
-            background-color: #333;
-        }
+    <meta charset="UTF-8">
 
-        .nav_menu a {
-            float: left;
-            display: block;
-            color: rgb(50, 168, 158);
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        .nav_menu a:hover {
-            background-color: white;
-            color: rgb(235, 154, 101);
-        }
+    <title>SMPL</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(182, 149, 149);
-            margin: 0;
-        }
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
 
-        #container {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 10px;
-            align-items: center;
-            justify-content: center;
-        }
+</head>
 
-        #video-container {
-            flex: 1;
-            width: 70%;
-            max-width: 750px;
-            position: relative;
-            display: flex;
-            margin-top: 20px;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #videoThumbnail {
-            width: 100%;
-            max-width: 560px;
-            cursor: pointer;
-        }
-
-        #chatVideo {
-            width: 100%;
-            max-width: 560px;
-            display: none;
-        }
-
-        #videoContainer {
-            position: relative;
-            width: 100%;
-            max-width: 560px;
-        }
-
-        #justClickText {
-            color: white;
-            text-align: center;
-            font-size: 24px;
-            margin-top: 10px;
-        }
-
-        @media screen and (max-width: 768px) {
-            #video-container {
-                width: 90%;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
-            #video-container {
-                width: 100%;
-            }
-        }
-    </style>
-</head>  
 <body>
-    <!-- Header -->
-    <div class="header" onclick="toggleAudio()" style="cursor: pointer;">
-        <h2 style="color:rgb(0, 0, 0);font-size:400%; font-family: audela;">
-            smpl.
-        </h2>
+
+    <!-- HEADER -->
+    <div
+        class="header"
+        onclick="toggleAudio()"
+    >
+
+        <h2>smpl.</h2>
+
     </div>
 
-    <!-- Navigation-->
+
+    <!-- NAVIGATION -->
     <div class="nav_menu">
-       <!-- <a href="about.html">-contact</a>-->
-    </div> 
+<!--
+        <button onclick="signup()">
+            Sign Up
+        </button>
 
-    <br><br><br>
-
-    <!-- Video Container -->
-    <div id="container"> 
-        <div id="video-container">
-            <div id="videoContainer">
-                <img id="videoThumbnail" src="cool.jpg" alt="Video Thumbnail" onclick="playVideo()">
-                <video id="chatVideo" controls onended="location.reload()" ondblclick="location.reload()">
-                    <source src="shhhh.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div id="justClickText">Just Click The Pic</div>
-            </div>
-        </div>
+        <button onclick="login()">
+            Login
+        </button>
+        
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
+        -->
     </div>
+
+    <!-- SUBSCRIBE POPUP
+    <div
+        id="subscribePopup"
+        class="subscribe-popup"
+        onclick="closeSubscribeOutside(event)"
+
+         <div class="subscribe-box">
+
+             CLOSE BUTTON 
+            <button
+                class="close-popup"
+                onclick="closeSubscribe()"
+            >
+                ×
+            </button>
+        -->
+
+            <!-- POPUP CONTENT 
+            <h2>Join SMPL</h2>-->
+
+
+
+            <!-- MONTHLY 
+            <button
+                class="subscribe-button"
+                onclick="startSubscription()"
+            >
+                Subscribe — $2/month
+            </button>-->
+
+
+            <!-- YEARLY 
+            <button
+                class="subscribe-button"
+                onclick="startAnnualSubscription()"
+            >
+                Subscribe — $20/year
+            </button> 
+
+        </div>
+       
+    </div>-->
+
+
+    <!-- VIDEO AREA -->
+    <div id="container">
+
+        <div id="video-container">
+
+            <div id="videoContainer">
+
+                <!-- STARTUP IMAGE -->
+                <img
+                    id="videoThumbnail"
+                    src="assets/cool.jpg"
+                    alt="SMPL Thumbnail"
+                    onclick="playVideo()"
+                >
+
+
+                <!-- VIDEO PLAYER -->
+                <video
+                    id="chatVideo"
+                    controls
+                    onended="location.reload()"
+                    src="assets/shhhh.mp4"
+                    type="video/mp4"
+                ></video>
+
+            </div>
+
+
+            <div id="justClickText">
+
+                Just Click The Pic
+
+            </div>
+
+
+            <div id="videoTitle"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 smpl inc. All rights reserved.</p>
+
+        <p>
+            &copy; 2026 smpl inc. All rights reserved.
+        </p>
+
     </footer>
-    <!-- Background Audio -->
-    <audio id="luckiomb" loop>
-        <source src="luckiomb.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
+
+
+    <!-- AUDIO -->
+    <audio
+        id="luckiomb"
+        loop
+    >
+
+        <source
+            src="assets/luckiomb.mp3"
+            type="audio/mp3"
+        >
+
     </audio>
 
-    <!-- Script -->
+
+    <!-- SUBSCRIBE JAVASCRIPT 
     <script>
-        function playVideo() {
-            var videoThumbnail = document.getElementById('videoThumbnail');
-            var video = document.getElementById('chatVideo');
-            var text = document.getElementById('justClickText');
-            var audio = document.getElementById('luckiomb');
 
-            // Stop background audio
-            audio.pause();
-            audio.currentTime = 0;
+        function subscribe() {
 
-            // Hide thumbnail and prompt
-            videoThumbnail.style.display = 'none';
-            text.style.display = 'none';
+            document.getElementById("subscribePopup").style.display = "flex";
 
-            // Show and play video
-            video.style.display = 'block';
-            video.play();
         }
 
-        function toggleAudio() {
-            var audio = document.getElementById('luckiomb');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
+
+        function closeSubscribe() {
+
+            document.getElementById("subscribePopup").style.display = "none";
+
+        }
+
+
+        function closeSubscribeOutside(event) {
+
+            if (event.target.id === "subscribePopup") {
+
+                closeSubscribe();
+
             }
+
         }
+
+
+        function startSubscription() {
+
+            alert("Monthly subscription selected!");
+
+        }
+
+
+        function startAnnualSubscription() {
+
+            alert("Annual subscription selected!");
+
+        }-->
+
     </script>
+
+
+    <!-- FIREBASE -->
+    <script
+        type="module"
+        src="firebase.js"
+    ></script>
+
+
+    <!-- AUTH -->
+    <script
+        type="module"
+        src="auth.js"
+    ></script>
+
+
+    <!-- VIDEO PLAYER -->
+    <script
+        type="module"
+        src="player.js"
+    ></script>
+
+
+    <!-- ADMIN -->
+    <script
+        type="module"
+        src="admin.js"
+    ></script>
+
+
+    <!-- MAIN APP -->
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
 </body>
+
 </html>
+
